@@ -11,7 +11,7 @@ var db = new sqlite3.Database(DB_FILE);
 
 var getBytes = function(s) {
     var bytes = 0;
-    var value = s.match(/\d+/g)[0];
+    var value = s.match(/[0-9.]+/g)[0];
     var unit = s.match(/[a-zA-Z]+/g)[0].toUpperCase();
     if (unit == 'KB' || unit == 'KIB') {
         return value*1024;
